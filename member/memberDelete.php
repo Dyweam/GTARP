@@ -5,6 +5,8 @@ require('../session.php');
 
 <?php confirm_logged_in(); ?>
 
+<?php redirect_is_moderator(); ?>
+
 <?php
 
 $user_id = $_POST['user_id'];
@@ -21,7 +23,6 @@ if($user_id == $_SESSION['user']['id']){
 else{
     $query = "DELETE FROM users WHERE id = " . $user_id;
 
-    echo $query;
     $result = mysqli_query($conn, $query);
     
     if ($result) {

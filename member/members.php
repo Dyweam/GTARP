@@ -4,6 +4,8 @@
 
 <?php confirm_logged_in(); ?>
 
+<?php redirect_is_moderator(); ?>
+
 <body class="bg-gray-100">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <div class="md:flex flex-col md:flex-row md:min-h-screen w-full">
@@ -14,7 +16,7 @@
                 <div class="py-4 px-4 bg-gray-600 text-white font-semibold">Membres</div>
                 <a href="/member/memberAdd.php" class="ml-auto my-6 mx-12 px-4 py-1 text-gray-900 font-light tracking-wider bg-gray-100 hover:bg-gray-200 rounded" type="submit">Ajouter un membre</a>
 
-                <?php echo isset($_SESSION['error']) ? '<div class="mx-12 md:rounded p-6 bg-white border-b border-gray-200 mb-4">' . $_SESSION['error'] . '</div>' : ""  ?>
+                <?php echo isset($_SESSION['error']) ? '<div class="md:mx-12 md:rounded p-6 bg-white border-b border-gray-200 mb-4">' . $_SESSION['error'] . '</div>' : ""  ?>
 
                 <?php include_once('../component/members.php') ?>
 

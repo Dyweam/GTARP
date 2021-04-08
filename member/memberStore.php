@@ -5,6 +5,8 @@ require('../session.php');
 
 <?php confirm_logged_in(); ?>
 
+<?php redirect_is_moderator(); ?>
+
 <?php
 
 $user_id = $_POST['user_id'];

@@ -10,7 +10,10 @@
     </div>
     <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block py-4 px-4 md:pb-0 md:overflow-y-auto">
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/index.php">Accueil</a>
-        <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/member/members.php">Membres</a>
+        <?php if(is_moderator()){
+            echo '<a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/member/members.php">Membres</a>';
+        } ?>
+        
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/citizen/citizens.php">Citoyens</a>
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/casier/casiers.php">Casier</a>
         <div @click.away="open = false" class="relative outline-none" x-data="{ open: false }">

@@ -4,6 +4,8 @@
 
 <?php confirm_logged_in(); ?>
 
+<?php redirect_is_moderator(); ?>
+
 <body class="bg-gray-100">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <div class="md:flex flex-col md:flex-row md:min-h-screen w-full">

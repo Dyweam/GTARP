@@ -17,4 +17,19 @@ function confirm_logged_in()
     }
 }
 
+function is_moderator()
+{
+    return $_SESSION['user']['moderator'];
+}
+
+function redirect_is_moderator()
+{
+    if (!is_moderator()) { ?>
+        <script type="text/javascript">
+            window.location = "../index.php";
+        </script>
+    <?php
+    }
+}
+
 ?>
