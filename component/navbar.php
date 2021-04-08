@@ -10,15 +10,14 @@
     </div>
     <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block py-4 px-4 md:pb-0 md:overflow-y-auto">
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/index.php">Accueil</a>
-        <?php if(is_moderator()){
-            echo '<a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/member/members.php">Membres</a>';
-        } ?>
+        <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/member/members.php">Membres</a>
+        <?php //if(is_moderator()){ echo '<a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/member/members.php">Membres</a>';} ?>
         
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/citizen/citizens.php">Citoyens</a>
         <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="/casier/casiers.php">Casier</a>
         <div @click.away="open = false" class="relative outline-none" x-data="{ open: false }">
             <a @click="open = !open" class="cursor-pointer cst-btn border-none outline-none flex flex-row items-center w-full px-4 py-2 text-xs font-semibold text-left bg-transparent">
-                <span><?php echo $_SESSION['user']['username']?></span>
+                <span>NAME<?php //echo $_SESSION['user']['username']?></span>
                 <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-300 transform md:-mt-1">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
@@ -29,8 +28,8 @@
                     <a class="cst-btn w-full block px-4 py-2 text-xs font-semibold text-gray-100" href="../logout.php">Deconnexion</a>
                 </div>
             </div>
-            <p class="mx-6 my-6 md:hidden">Bienvenue, <b><?php echo $_SESSION['user']['username']?></b> !</p>
+            <p class="mx-6 my-6 md:hidden">Bienvenue, NAME<b><?php //echo $_SESSION['user']['username']?></b> !</p>
         </div>
     </nav>
-    <p class="mx-6 my-6 hidden md:block">Bienvenue, <b><?php echo $_SESSION['user']['username']?></b> !</p>
+    <p class="mx-6 my-6 hidden md:block">Bienvenue, NAME<b><?php //echo $_SESSION['user']['username']?></b> !</p>
 </div>

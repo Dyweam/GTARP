@@ -7,6 +7,11 @@ $result = mysqli_query($conn, $query);
 
 if($result){
     while ($row = $result->fetch_assoc()) {
+        $query = "SELECT * FROM services WHERE id =" .$row['service_id'];
+        $result2 = mysqli_query($conn, $query);
+        $row2 = $result2->fetch_assoc();
+        $data = $row2['name'] .' - '. $row['matricule'];
+
         echo '<div class="md:mx-12 md:rounded p-6 bg-white border-b border-gray-200 mb-4">
         <div class="flex items-center px-4">
             <div class="flex-shrink-0">
@@ -17,7 +22,7 @@ if($result){
 
             <div class="ml-3">
                 <div class="font-medium text-base text-gray-800">'. $row['username'] .'</div>
-                <!-- <div class="font-medium text-sm text-gray-500">GRADE</div> -->
+                <div class="font-medium text-sm text-gray-500">'. $data .'</div>
             </div>
         </div>
 

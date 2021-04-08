@@ -15,30 +15,38 @@
                 <div class="py-4 px-4 bg-gray-600 text-white font-semibold">Ajout d'un membre</div>
                 <a href="/member/members.php" class="ml-auto mr-12 md:mr-20 lg:mr-32 my-6 px-4 py-1 text-gray-900 font-light tracking-wider bg-gray-100 hover:bg-gray-200 rounded" type="submit">Retour</a>
 
+                <?php echo isset($_SESSION['error']) ? '<div class="md:mx-20 lg:mx-32 md:rounded p-6 bg-white border-b border-gray-200 mb-4">' . $_SESSION['error'] . '</div>' : ""  ?>
+
                 <div class="md:mx-20 lg:mx-32 md:rounded p-6 bg-white border-b border-gray-200">
                     <div class="p-2 font-semibold">
                         Remplissez les informations nécessaires
                     </div>
-                    <form method="POST" class="md:px-10">
+                    <form method="POST" class="md:px-10" action="memberStore.php">
                         <div class="mt-4">
                             <label class="block font-medium text-sm text-gray-700" for="name">
                                 Pseudonyme
                             </label>
-                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="name" type="text" name="name" required="required" autofocus="autofocus">
+                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="username" type="text" name="username" required autofocus="autofocus">
                         </div>
 
                         <div class="mt-4">
                             <label class="block font-medium text-sm text-gray-700" for="password">
                                 Mot de passe
                             </label>
-                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="password" type="password" name="password" required="required">
+                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="password" type="password" name="password" required>
                         </div>
 
                         <div class="mt-4">
                             <label class="block font-medium text-sm text-gray-700" for="passwordConfirm">
                                 Confirmation Mot de passe
                             </label>
-                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="passwordConfirm" type="password" name="passwordConfirm" required="required">
+                            <input class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="passwordConfirm" type="password" name="passwordConfirm" required>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="inline-flex items-center mt-3">
+                                <input name="moderator" id="moderator" type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700">Modérateur</span>
+                            </label>
                         </div>
 
                         <div class="flex items-center justify-end mt-4">

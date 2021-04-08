@@ -48,6 +48,13 @@ require('../session.php');
                         </div>
 
                         <div class="mt-4">
+                            <label class="block font-medium text-sm text-gray-700" for="name">
+                                Matricule
+                            </label>
+                            <input value="<?php echo $row[1]; ?>" class="p-2 bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" id="username" type="text" disabled autofocus="autofocus">
+                        </div>
+
+                        <div class="mt-4">
                             <label class="block font-medium text-sm text-gray-700" for="newPassword">
                                 Nouveau Mot de passe
                             </label>

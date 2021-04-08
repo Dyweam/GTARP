@@ -7,8 +7,6 @@ require('../session.php');
 
 <?php redirect_is_moderator(); ?>
 
-
-
 <?php
 
 $user_id = $_POST['user_id'];
